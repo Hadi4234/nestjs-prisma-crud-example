@@ -1,85 +1,115 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+# **Nestjs Prisma crud api Server and Swagger**
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+Welcome to the **Nestjs Prisma crud api Server** project! This repository contains the server-side code for rest api application. This README file provides guidelines on how to build and contribute to the project as a team. Please make sure to follow these instructions to maintain a consistent and efficient development process.
 
-## Description
+## **Getting Started**
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+1. **Clone the Repository:**
+    
+    ```bash
+    git clone https://github.com/Hadi4234/nestjs-prisma-crud-example.git
+    ```
+    
+2. **Navigate to the Project Directory:**
+    
+    ```bash
+    cd nestjs-prisma-crud-example
+    ```
+    
+3. **Install Dependencies:**
+    
+    ```bash
+    yarn install
+    ```
+4. **Please create: `.env` file and add**
 
-## Project setup
+   ```bash
+    DATABASE_URL="mysql://root:@localhost:3306/mydb_name"
+    ```
+5. **Prisma migrationn**
 
-```bash
-$ pnpm install
-```
+   ```bash
+    npx prisma migrate dev
+    ```
 
-## Compile and run the project
+6. **Start the Server:**
+    
+    ```bash
+    yarn run start
+    ```
+    
+    The server will be running at **`http://localhost:3000/api/v1/`** .
 
-```bash
-# development
-$ pnpm run start
+    The swagger doc server will be running at **`http://localhost:3000/doc`** .
 
-# watch mode
-$ pnpm run start:dev
-
-# production mode
-$ pnpm run start:prod
-```
-
-## Run tests
 
 ```bash
-# unit tests
-$ pnpm run test
 
-# e2e tests
-$ pnpm run test:e2e
+[Nest] 9604  - 09/15/2024, 9:05:17 PM     LOG [RoutesResolver] AppController {/api/v1}: +82ms
+[Nest] 9604  - 09/15/2024, 9:05:17 PM     LOG [RouterExplorer] Mapped {/api/v1, GET} route +7ms
+[Nest] 9604  - 09/15/2024, 9:05:17 PM     LOG [RoutesResolver] ArticlesController {/api/v1/articles}: +1ms
+[Nest] 9604  - 09/15/2024, 9:05:17 PM     LOG [RouterExplorer] Mapped {/api/v1/articles, POST} route +3ms
+[Nest] 9604  - 09/15/2024, 9:05:17 PM     LOG [RouterExplorer] Mapped {/api/v1/articles, GET} route +2ms
+[Nest] 9604  - 09/15/2024, 9:05:17 PM     LOG [RouterExplorer] Mapped {/api/v1/articles/drafts, GET} route +1ms
+[Nest] 9604  - 09/15/2024, 9:05:17 PM     LOG [RouterExplorer] Mapped {/api/v1/articles/:id, GET} route +2ms
+[Nest] 9604  - 09/15/2024, 9:05:17 PM     LOG [RouterExplorer] Mapped {/api/v1/articles/:id, PATCH} route +1ms
+[Nest] 9604  - 09/15/2024, 9:05:17 PM     LOG [RouterExplorer] Mapped {/api/v1/articles/:id, DELETE} route +1ms
+[Nest] 9604  - 09/15/2024, 9:05:17 PM     LOG [RoutesResolver] UsersController {/api/v1/users}: +1ms
+[Nest] 9604  - 09/15/2024, 9:05:17 PM     LOG [RouterExplorer] Mapped {/api/v1/users, POST} route +1ms
+[Nest] 9604  - 09/15/2024, 9:05:17 PM     LOG [RouterExplorer] Mapped {/api/v1/users, GET} route +3ms
+[Nest] 9604  - 09/15/2024, 9:05:17 PM     LOG [RouterExplorer] Mapped {/api/v1/users/:id, GET} route +2ms
+[Nest] 9604  - 09/15/2024, 9:05:17 PM     LOG [RouterExplorer] Mapped {/api/v1/users/:id, PATCH} route +3ms
+[Nest] 9604  - 09/15/2024, 9:05:17 PM     LOG [RouterExplorer] Mapped {/api/v1/users/:id, DELETE} route +2ms
+[Nest] 9604  - 09/15/2024, 9:05:17 PM     LOG [RoutesResolver] AuthController {/api/v1/auth}: +0ms
+[Nest] 9604  - 09/15/2024, 9:05:17 PM     LOG [RouterExplorer] Mapped {/api/v1/auth/login, POST} route +1ms
+[Nest] 9604  - 09/15/2024, 9:05:17 PM     LOG [RoutesResolver] CommentController {/api/v1/comment}: +1ms
+[Nest] 9604  - 09/15/2024, 9:05:17 PM     LOG [RouterExplorer] Mapped {/api/v1/comment, POST} route +1ms
+[Nest] 9604  - 09/15/2024, 9:05:17 PM     LOG [RouterExplorer] Mapped {/api/v1/comment, GET} route +0ms
+[Nest] 9604  - 09/15/2024, 9:05:17 PM     LOG [RouterExplorer] Mapped {/api/v1/comment/:id, GET} route +1ms
+[Nest] 9604  - 09/15/2024, 9:05:17 PM     LOG [RouterExplorer] Mapped {/api/v1/comment/:id, PATCH} route +1ms
+[Nest] 9604  - 09/15/2024, 9:05:17 PM     LOG [RouterExplorer] Mapped {/api/v1/comment/:id, DELETE} route +1ms
+[Nest] 9604  - 09/15/2024, 9:05:17 PM     LOG [NestApplication] Nest application successfully started +9ms
 
-# test coverage
-$ pnpm run test:cov
-```
+ ```   
 
-## Resources
+## **Contributing Guidelines**
 
-Check out a few resources that may come in handy when working with NestJS:
+To contribute to the project, follow these guidelines:
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+1. **Create a Feature Branch:**
+Before starting work on a new feature, create a feature branch:
+    
+    ```bash
+    git checkout -b feature/your-feature-name
+    ```
+    
+2. **Write Code:**
+Implement the feature or fix the bug on your feature branch.
+3. **Commit Changes:**
+Commit your changes with a meaningful commit message:
+    
+    ```bash
+    git commit -m "Add your commit message here"
+    ```
+    
+4. **Push Changes:**
+Push your changes to your feature branch:
+    
+    ```bash
+    git push origin feature/your-feature-name
+    ```
+    
+5. **Create a Pull Request (PR):**
+Create a pull request from your feature branch to the **`development`** branch on GitHub. Ensure the PR title and description are descriptive.
+6. **Code Review:**
+Your code will be reviewed by other team members. Address any feedback and make necessary changes.
 
-## Support
+## **Additional Notes**
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+- **Main Branch:**
+The **`main`** branch is reserved for stable releases. Do not directly push to the main branch.
+- **Issues and Bug Tracking:**
+Use the GitHub Issues tab to report bugs, suggest features, or discuss enhancements.
+- **Coding Standards:**
+Follow the coding standards and conventions established by the team. Ensure your code is well-documented.
